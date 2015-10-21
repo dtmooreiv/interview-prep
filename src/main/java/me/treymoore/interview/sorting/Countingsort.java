@@ -32,6 +32,8 @@ public class Countingsort {
     public static void main(String[] args) {
         int[] intList =  Utils.toIntArray(Utils.getPosIntList(10, 5));
         System.out.println("Before: " + Arrays.toString(intList));
-        System.out.println("After: " + Arrays.toString(countingSort(intList)));
+        int[] sorted = countingSort(intList);
+        System.out.println("After: " + Arrays.toString(sorted));
+        System.out.println("Is sorted: " + Utils.isSorted(sorted));
     }
 }

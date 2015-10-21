@@ -56,4 +56,19 @@ public class Utils {
 
         return arr;
     }
+
+    public static boolean isSorted(ArrayList<Integer> array) {
+        return isSorted(Utils.toIntArray(array));
+    }
+
+    //Checks if a given array of ints is sorted
+    public static boolean isSorted(int[] array) {
+        for(int i = 1; i < array.length; i++) {
+            if(array[i] < array[i - 1]) {
+                return false;
+            }
+        }
+
+        return true;
+    }
 }

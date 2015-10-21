@@ -15,10 +15,21 @@ public class LinkedListImpl<T> {
         this.head = head;
     }
 
+    //Convenience method
+    public void add(T value) {
+        Node<T> newNode = new Node<T>(value);
+        add(newNode);
+    }
+
     //Adds a new node to the start of the list
     public void add(Node<T> node) {
         node.setNext(head);
         this.head = node;
+    }
+
+    public void addEnd(T value) {
+        Node<T> newNode = new Node<T>(value);
+        addEnd(newNode);
     }
 
     //Adds a new node to the end of the list
@@ -29,6 +40,12 @@ public class LinkedListImpl<T> {
         }
 
         cur.setNext(node);
+    }
+
+    //Such convenience, many tedium
+    public void insert(T value, int index) {
+        Node<T> newNode = new Node<T>(value);
+        insert(newNode, index);
     }
 
     //Inserts node at the given index
@@ -77,6 +94,26 @@ public class LinkedListImpl<T> {
         } else {
             throw new IndexOutOfBoundsException("Given index: " + index + " out of bounds");
         }
+    }
+
+    public boolean delete(T value) {
+        Node<T> cur = head;
+        Node<T> prev = null;
+
+        while(cur != null) {
+            if(cur.getValue().equals(value)) {
+                if(prev != null) {
+                    prev.setNext(cur.getNext());
+                } else {
+                    head = head.getNext();
+                }
+            } else {
+                prev = cur;
+                cur = cur.getNext();
+            }
+        }
+
+        return false;
     }
 
     //Removes node from this list if its contained

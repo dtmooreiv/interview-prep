@@ -25,5 +25,6 @@ public class Bubblesort {
         System.out.println("Before: " + Arrays.toString(intList.toArray()));
         bubblesort(intList);
         System.out.println("After: " + Arrays.toString(intList.toArray()));
+        System.out.println("Is sorted: " + Utils.isSorted(intList));
     }
 }

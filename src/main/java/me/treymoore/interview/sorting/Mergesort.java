@@ -55,5 +55,6 @@ public class Mergesort {
         ArrayList<Integer> intList = Utils.getIntList(100);
         System.out.println("Before: " + Arrays.toString(intList.toArray()));
         System.out.println("After: " + Arrays.toString(mergeSort(intList).toArray()));
+        System.out.println("Is Sorted: " + Utils.isSorted(mergeSort(intList)));
     }
 }
