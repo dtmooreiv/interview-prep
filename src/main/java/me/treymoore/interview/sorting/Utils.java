@@ -12,6 +12,12 @@ public class Utils {
         array.set(ind2, tmp);
     }
 
+    public static void swap(int[] array, int ind1, int ind2) {
+        int tmp = array[ind1];
+        array[ind1] = array[ind2];
+        array[ind2] = tmp;
+    }
+
     public static ArrayList<Integer> getIntList(int size) {
         return getIntList(size, Integer.MAX_VALUE);
     }
